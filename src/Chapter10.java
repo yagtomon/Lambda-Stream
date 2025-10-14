@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +14,7 @@ public class Chapter10 {
 
         List<Task> incomplete = list.stream()
                 .filter(t -> !t.isDone())                          
-                .sorted(Comparator.comparing(Task::getDate))       
+                .sorted()       
                 .collect(Collectors.toList());                    
 
         System.out.println("未完了のタスクの個数は" + incomplete.size());
